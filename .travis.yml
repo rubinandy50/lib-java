@@ -4,11 +4,12 @@ services:
   - docker
 env:
   global:
+    - TRAVIS_WAIT=20000
     - CT_RELEASE=1.0.1
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
-script:
-    - travis_wait 12010 
+install: travis_wait 12010 
+     
 before_install: 
   - travis_wait 12000 
   - sudo apt-get -y update 
