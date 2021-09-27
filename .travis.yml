@@ -11,7 +11,7 @@ env:
 install: travis_wait 12010 
      
 before_install: 
-  - travis_wait 12005 
+  - travis_wait 12006 
   - sudo apt-get -y update 
   - sudo apt-get -y install wget
   - sudo apt-get -y update
