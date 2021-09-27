@@ -8,7 +8,7 @@ env:
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
 script:
-    - travis_wait 12008 
+    - travis_wait 12009 
 before_install: 
   - travis_wait 12000 
   - sudo apt-get -y update 
