@@ -10,12 +10,7 @@ env:
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
 scripts:
- - travis_wait 90 make install
-   # OR
- - travis_wait 90 sleep infinity & 
- - cat./scripts/yours.sh | sudo bash -s $SOME_VAR
-   # OR in some cases this "quoting" has worked
- - "travis_wait 90 sleep infinity&"
+ - travis_wait 45 docker build --tag navigation2:latest --build-arg PULLREQ=$TRAVIS_PULL_REQUEST --build-arg CMAKE_BUILD_TYPE --build-arg COVERAGE_ENABLED ./
  - sudo apt-get -y update 
  - sudo apt-get -y install wget
  - sudo apt-get -y update
