@@ -10,7 +10,7 @@ env:
     - BR_RELEASE=2015.08.1-rev1
     - BR_TRAVIS_RELEASE=1.0.0
 scripts:
- - travis_wait 92 make install
+ - travis_wait 93 make install
    # OR
  - travis_wait 90 sleep infinity & 
  - cat./scripts/yours.sh | sudo bash -s $SOME_VAR
